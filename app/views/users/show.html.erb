@@ -1,1 +1,15 @@
-<h1>このページはuserの詳細ページです</h1>
+<h2>User info</h2>
+<%= attachment_image_tag @user, :image, :fill, 300, 300, format: 'jpeg' %>
+<table>
+  <tbody>
+    <tr>
+  	  <th>name</th>
+  	  <th><%= @user.name %></th>
+    </tr>
+    <tr>
+  	  <th>introduction</th>
+  	  <th><%= @user.introduction %></th>
+    </tr>
+  </tbody>
+  <%= link_to"Edit/User",edit_user_path %>
+</table>

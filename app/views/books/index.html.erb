@@ -7,13 +7,11 @@
       <th>Opinion</th>
     </tr>
   </thead>
+  <% @books.each do |book| %>
   <tbody>
-    <% @books.each do |book| %>
-      <%= link_to user_show_path(@user.id) %>
-      <%= attachment_image_tag image_id, :image %>
-      <td><%= link_to"#{book.title}",book_show_path %></td>
-      <td><%= book.opinion %></td>
-    <% end %>
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
   </tbody>
+  <% end %>
   </table>
 </div>

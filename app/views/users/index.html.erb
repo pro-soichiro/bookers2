@@ -1,19 +1,23 @@
 <div class="col-md-8 offset-md-1">
-  <h2>Books</h2>
-  <table class="table table-hover table-inverse">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Opinion</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @books.each do |book| %>
-      <%= link_to user_show_path(@user.id) %>
-      <%= attachment_image_tag image_id, :image %>
-      <td><%= link_to"#{book.title}",book_show_path %></td>
-      <td><%= book.opinion %></td>
+  <h2>Users</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>image</th>
+        <th>name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" ,size:"60x60"%>
+        </td>
+        <td><%= user.name %></td>
+        <td><%= link_to"Show",user_path(user.id) %></td>
+      </tr>
     <% end %>
-  </tbody>
+    </tbody>
   </table>
 </div>

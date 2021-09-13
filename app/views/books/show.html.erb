@@ -1,1 +1,12 @@
-<h1>このページはbooksの詳細ページ</h1>
+<div class="col-md-8 offset-md-1">
+  <h2>Books detail</h2>
+  <table class="table table-hover table-inverse">
+  <tbody>
+    <td><%= @user.image_id %></td>
+    <td><%= link_to user_path(@user.id) %></td>
+    <td><%= link_to"book.title",book_show_path %></td>
+    <td><%= book.opinion %></td>
+    <p><%= @user.name %></p>
+  </tbody>
+  </table>
+</div>

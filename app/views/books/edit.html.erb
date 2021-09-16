@@ -1,0 +1,20 @@
+<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  <h1>Editing Book</h1>
+
+  <%= form_with model: @book, local:true do |f| %>
+    <div class="form-group">
+      <label>Title</label>
+      <%= f.text_field :title, autofocus: true, placeholder:"名前" ,class:"form-control"%>
+    </div>
+    <div class="form-group">
+      <label>Introduction</label>
+      <%= f.text_area :body,class:"form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.submit 'Update Book',class:"btn btn-secondary" %>
+    </div>
+  <% end %>
+  <%= link_to "Show",book_path(@book.id) %>
+  <span>|</span>
+  <%= link_to "Back",books_path %>
+</div>
